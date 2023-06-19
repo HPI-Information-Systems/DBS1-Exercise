@@ -2,12 +2,12 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
-    kotlin("jvm") version "1.8.20"
+    kotlin("jvm") version "1.8.22"
     java
     application
 
-    id("com.github.ben-manes.versions") version "0.46.0"
-    id("org.jetbrains.dokka") version "1.8.10"
+    id("com.github.ben-manes.versions") version "0.47.0"
+    id("org.jetbrains.dokka") version "1.8.20"
     idea
 }
 
@@ -20,15 +20,15 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.10")
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.8.20")
 
     implementation("org.postgresql:postgresql:42.6.0")
 
-    implementation("com.github.ajalt.clikt:clikt:3.5.2")
+    implementation("com.github.ajalt.clikt:clikt:3.5.3")
 
     testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.2")
-    testImplementation("io.kotest:kotest-assertions-core:5.5.5")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+    testImplementation("io.kotest:kotest-assertions-core:5.6.2")
 }
 
 application {
@@ -37,7 +37,7 @@ application {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -57,12 +57,11 @@ tasks {
         kotlinOptions {
             apiVersion = "1.8"
             languageVersion = "1.8"
-            freeCompilerArgs = listOf("-Xcontext-receivers")
         }
     }
 
     withType<DependencyUpdatesTask> {
-        val unstable = Regex("^.*?(?:alpha|beta|unstable|ea|rc).*\$", RegexOption.IGNORE_CASE)
+        val unstable = Regex("^.*?(?:alpha|beta|unstable|ea|rc|M\\d).*\$", RegexOption.IGNORE_CASE)
         rejectVersionIf {
             candidate.version.matches(unstable)
         }
