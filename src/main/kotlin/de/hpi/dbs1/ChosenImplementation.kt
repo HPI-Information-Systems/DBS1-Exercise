@@ -1,5 +1,8 @@
 package de.hpi.dbs1
 
+import JDBCExerciseJavaImplementation
+import JDBCExerciseKotlinImplementation
+
 annotation class ChosenImplementation(
     val value: Boolean
 )
@@ -10,8 +13,8 @@ class NoSubmissionImplementationChosen : IllegalStateException(
 
 fun getChosenImplementation(): JDBCExercise {
     return listOf(
-        JDBCExerciseJava::class.java,
-        JDBCExerciseKotlin::class.java
+        JDBCExerciseJavaImplementation::class.java,
+        JDBCExerciseKotlinImplementation::class.java,
     ).firstOrNull { clazz ->
         clazz.getAnnotation(ChosenImplementation::class.java)?.value ?: false
     }?.getDeclaredConstructor()?.newInstance()
