@@ -59,7 +59,7 @@ You will see that there are 3 tasks to do, which get harder with each time:
 
 The later two also require [entity objects](src/main/java/de/hpi/dbs1/entities) which will contain relational results from your queries. How you query the database is up to you, but at the end, you have to return lists of the required objects from the methods.
 
-We recommend reading the [PostgreSQL JDBC Documentation](https://jdbc.postgresql.org/documentation/use/) for a quick introduction in how to use the API to connect to your database, create `PreparedStatement` objects for queries, and reading of the `ResultSet`.
+The lecture on Wednesday 28th of June should give you a short introduction to JDBC. Additionally you can read details about JDBC in the [PostgreSQL JDBC Documentation](https://jdbc.postgresql.org/documentation/use/) , though a lot them are not needed for this exercise. All you need to do is use the API to connect to your database, create `PreparedStatement` objects for queries, and read the `ResultSet` to get the query results.
 
 ### Test your implementation
 
