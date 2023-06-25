@@ -46,6 +46,10 @@ object Actors {
             )
         )
     }
+    @JvmField
+    val JACK_BLACK2 = Actor("nm3383009 ", "Jack Black")
+    @JvmField
+    val JACK_BLACK3 = Actor("nm4795107 ", "Jack Black")
 
     @JvmField
     val JACK_BLACKBURN = Actor("nm0085601 ", "Jack Blackburn")

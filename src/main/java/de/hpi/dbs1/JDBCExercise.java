@@ -50,7 +50,7 @@ public interface JDBCExercise {
 	) throws SQLException;
 
 	/**
-	 * Searches the database for the 3 most relevant actors/actresses whose title contains the keywords.
+	 * Searches the database for the 5 most relevant actors/actresses whose title contains the keywords.
 	 * <ul>
 	 * <li>Each actor consists of its unique ID (nconst) and name
 	 *     represented by the {@link Actor} class.

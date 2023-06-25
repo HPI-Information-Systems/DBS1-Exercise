@@ -78,7 +78,7 @@ public class JDBCExerciseImplementationTests {
 	void testQueryActors2() throws SQLException {
 		try(var connection = implementation.createConnection(config)) {
 			List<Actor> results = implementation.queryActors(connection, "Jack Black");
-			Assertions.assertEquals(List.of(JACK_BLACK, JACK_BLACKBURN, JACK_BLACKWELL), results);
+			Assertions.assertEquals(List.of(JACK_BLACK, JACK_BLACK2, JACK_BLACK3, JACK_BLACKBURN, JACK_BLACKWELL), results);
 
 			Assertions.assertEquals(JACK_BLACK, results.get(0));
 			Assertions.assertEquals(JACK_BLACK.playedIn, results.get(0).playedIn);
