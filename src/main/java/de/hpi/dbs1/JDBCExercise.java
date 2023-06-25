@@ -16,7 +16,7 @@ public interface JDBCExercise {
 	 * for examples on how to do this.
 	 * <p><b>2 Points</b> for returning an open connection to the database.
 	 *
-	 * @param config all relevant connection details
+	 * @param config all relevant connection details (see {@link ConnectionConfig})
 	 * @return an open connection
 	 * @throws SQLException if the connection could not be established
 	 */
