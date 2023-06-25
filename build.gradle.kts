@@ -1,5 +1,6 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+import de.hpi.dbs2.submitting.PackSubmissionTask
 
 plugins {
     kotlin("jvm") version "1.8.22"
@@ -59,6 +60,8 @@ tasks {
             languageVersion = "1.8"
         }
     }
+
+    register<PackSubmissionTask>("packSubmission")
 
     withType<DependencyUpdatesTask> {
         val unstable = Regex("^.*?(?:alpha|beta|unstable|ea|rc|M\\d).*\$", RegexOption.IGNORE_CASE)

@@ -38,7 +38,7 @@ Simply open this folder in your IDE and it should automatically get picked up as
 The most important build tasks we want to use are:
 - `gradle run --args="<search keyword>"` to start your program with the given keyword.
 - `gradle test` to start the provided test suite to test your solutions.
-- `gradle packExercise` to pack your implementation for submission.
+- `gradle packSubmission` to pack your implementation for submission.
 
 If you have a Gradle plugin in your IDE (icon with an elephant), you should find these task there. You can also provide run arguments on these which is needed for `gradle run`.
 
@@ -76,4 +76,4 @@ Under the hood Gradle runs the [`main(args)` method](src/main/kotlin/de/hpi/dbs1
 
 ### Submission
 
-Use `gradle packExercise` to pack your chosen implementation file into a `.zip` (with some additional data). It will be written into the project root folder. Please upload exactly this file to Moodle!
+Use `gradle packSubmission` to pack your chosen implementation file into a `.zip` (with some additional data). It will be written into the `submissions` folder in your project. Please upload exactly this file to Moodle!
