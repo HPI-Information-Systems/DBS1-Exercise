@@ -1,6 +1,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import de.hpi.dbs1.grading.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
-import de.hpi.dbs2.submitting.PackSubmissionTask
+import de.hpi.dbs1.submitting.PackSubmissionTask
 
 plugins {
     kotlin("jvm") version "1.8.22"
@@ -62,6 +63,11 @@ tasks {
     }
 
     register<PackSubmissionTask>("packSubmission")
+
+    register<UnpackSubmissionsTask>("unpackSubmissions")
+    register<LoadSubmissionTask>("loadSubmission")
+    register<UnloadSubmissionTask>("unloadSubmission")
+    register<GenerateReportTask>("createReport")
 
     withType<DependencyUpdatesTask> {
         val unstable = Regex("^.*?(?:alpha|beta|unstable|ea|rc|M\\d).*\$", RegexOption.IGNORE_CASE)

@@ -1,4 +1,4 @@
-package de.hpi.dbs2.submitting
+package de.hpi.dbs1.submitting
 
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
@@ -30,7 +30,11 @@ abstract class PackSubmissionTask : DefaultTask() {
             ?: error("Please set your group identifier in the gradle.properties file")
 
     companion object {
-        val JVM_LANGUAGE_SRC_DIRS = listOf("kotlin", "java", "groovy", "scala")
+        val JVM_LANGUAGE_FILE_EXTENSION_MAPPINGS = mapOf(
+            "java" to "java",
+            "kt" to "kotlin",
+        )
+        val JVM_LANGUAGE_SRC_DIRS = JVM_LANGUAGE_FILE_EXTENSION_MAPPINGS.values
     }
 
     init {
